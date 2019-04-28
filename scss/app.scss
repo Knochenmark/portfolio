@@ -1,6 +1,7 @@
 $navbarBackground: #372db4;
 $navbarHover: #493fc8;
 
+$footer-color: #222;
 $leftSide: #2b2c2c;
 $rightSide: #2d2e2e;
 $secondLeft: #292a2a;
@@ -30,7 +31,7 @@ main {
 
   .left {
     width: 200px;
-    padding: 70px 20px;
+    padding: 50px 20px;
     flex: none;
     display: inline-block;
   }
@@ -57,6 +58,10 @@ main {
     p {
       font-size: 0.9em;
 
+      &.helloiam {
+        margin: 0;
+      }
+
       .fa-envelope {
         padding-right: 5px;
       }
@@ -75,10 +80,28 @@ main {
       margin: 10px;
     }
 
-    .fab {
+    .fab, .fas {
       color: $font-color-grey;
       font-size: 1.5em;
       margin: 5px;
+    }
+
+    .fab.fa-github {
+      &:hover{
+        color: lightcoral;
+      }
+    }
+
+    .fab.fa-twitter {
+      &:hover{
+        color: dodgerblue;
+      }
+    }
+
+    .fas.fa-envelope {
+      &:hover{
+        color: $color-gold;
+      }
     }
   }
 }
@@ -86,13 +109,12 @@ main {
 header {
   display: flex;
   justify-content: space-between;
-  padding: 7px 30px;
+  padding: 0 30px;
   position: fixed;
   height: 80px;
   top: 0;
   left: 0;
   right: 0;
-
   transition: 0.5s;
 
   .change + .sidenav {
@@ -109,7 +131,6 @@ header {
     background: rgb(0, 0, 0);
     background: rgba(0, 0, 0, 0.8);
     z-index: 3;
-
     transition: 0.6s;
 
     .links {
@@ -131,7 +152,7 @@ header {
 
       &:active,
       &:visited {
-        color: #fff;
+        color: $color-gold;
       }
 
       &:hover {
@@ -141,17 +162,12 @@ header {
   }
 
   .brand {
-    height: 40px;
-
-    margin: auto 50px;
-    font-size: 0.9em;
-    font-weight: bold;
+    height: 80px;
+    width: 200px;
+    color: $color-gold;
     display: flex;
-    color: #f1b200;
-
-    h2 {
-      align-self: center;
-    }
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -174,13 +190,6 @@ header {
   z-index: 5;
   position: relative;
   transform: scale(0.8);
-
-  &.change {
-    // position: fixed;
-    //animation: fixIcon 0.4s forwards;
-
-    //h 34 w 32
-  }
 
   .bar1,
   .bar2,
@@ -213,7 +222,7 @@ header {
 }
 
 footer {
-  color: #f1b200;
+  font-size: 0.7em;
   width: 30px;
   height: 100%;
   display: flex;
@@ -222,23 +231,18 @@ footer {
   left: 0;
   top: 0;
   bottom: 0;
-  background: #000;
+  background: $footer-color;
   user-select: none;
 
-  p {
-    display: block;
-    height: 20px;
-    width: 100px;
-    transform-origin: top left;
-    transform: rotate(-90deg);
-    white-space: nowrap;
-    padding: 5px;
-    font-weight: bold;
-    font-size: 0.7em;
-
     a {
+      height: 30px;
+      transform-origin: top left;
+      transform: rotate(-90deg);
+      font-weight: bold;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
     }
-  }
 }
 
 .gold-text {
@@ -292,7 +296,7 @@ a:visited:active {
       }
 
       &.active {
-        color: white;
+        color: $color-gold;
       }
     }
   }
